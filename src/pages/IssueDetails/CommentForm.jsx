@@ -3,18 +3,18 @@ import { useForm } from 'react-hook-form'
 import {
   Avatar,
   AvatarFallback
-} from '@/Components/ui/Avatar' 
+} from '@/Components/ui/avatar' 
 import {
   Form,
   FormField,
   FormItem,
   FormControl,
   FormMessage
-} from '@/Components/ui/Form'
-import { createComment } from '../../Redux/Comment/Action'
-import { fetchCommentsByIssueId } from '../../Redux/Comment/Action'
-import { Input } from '@/Components/ui/Input'
-import { Button } from '@/Components/ui/Button'
+} from '@/Components/ui/form'
+import { createComment } from '../../Redux/Comment/action'
+import { fetchCommentsByIssueId } from '../../Redux/Comment/action'
+import { Input } from '@/Components/ui/input'
+import { Button } from '@/Components/ui/button'
 import { useDispatch, useSelector } from 'react-redux'
 
 const CommentForm = ({ issueId }) => {
