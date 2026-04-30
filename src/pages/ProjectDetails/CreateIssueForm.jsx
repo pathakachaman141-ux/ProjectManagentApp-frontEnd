@@ -9,7 +9,7 @@ import {
   FormMessage
 } from '@/Components/ui/form'
 import { Input } from '@/Components/ui/input'
-import { Button } from '@/Components/ui/button'
+import { Button } from '@/Components/ui/Button'
 import { DialogClose } from '@/Components/ui/dialog'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'

@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardContent
 } from '@/Components/ui/card'
-import { Button } from '@/Components/ui/button'
+import { Button } from '@/Components/ui/Button'
 import UserList from './UserList'
 
 import {
@@ -23,7 +23,7 @@ import {
 import {
   Avatar,
   AvatarFallback
-} from '@/Components/ui/avatar'
+} from '@/Components/ui/Avatar'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { deleteIssue, getIssuesByProjectId } from '../../Redux/Issue/Action'

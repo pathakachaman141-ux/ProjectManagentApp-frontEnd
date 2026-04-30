@@ -1,5 +1,5 @@
 // Change from @ imports to relative imports
-import { Button } from '../../Components/ui/button'
+import { Button } from '../../Components/ui/Button'
 import {
   DropdownMenu,
   DropdownMenuContent,

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Button } from "@/Components/ui/button"
+import { Button } from "@/Components/ui/Button"
 import { CheckCircledIcon } from '@radix-ui/react-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { createPayment } from '../../Redux/Payment/Action'

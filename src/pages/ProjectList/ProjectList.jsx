@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/Components/ui/Button'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Label } from "@/components/ui/label"
+import { Label } from "@/Components/ui/Label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Input } from "@/components/ui/input"
 import { Search } from 'lucide-react'

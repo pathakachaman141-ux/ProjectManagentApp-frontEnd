@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from '@/Components/ui/card'
 import { CheckCircledIcon } from '@radix-ui/react-icons'
-import { Button } from '@/Components/ui/button'
+import { Button } from '@/Components/ui/Button'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { upgradeSubscription, getUserSubscription } from '../../Redux/Subscription/Action'

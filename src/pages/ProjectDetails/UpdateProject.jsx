@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Card, CardContent, CardHeader, CardTitle } from '@/Components/ui/card'
-import { Button } from '@/Components/ui/button'
+import { Button } from '@/Components/ui/Button'
 import { Input } from '@/Components/ui/input'
 import { Textarea } from '@/Components/ui/textarea'
-import { Label } from '@/Components/ui/label'
+import { Label } from '@/Components/ui/Label'
 import { Badge } from '@/Components/ui/badge'
 import {
   Select,

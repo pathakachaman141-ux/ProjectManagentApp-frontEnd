@@ -9,7 +9,7 @@ import {
   FormMessage
 } from '@/Components/ui/form'
 import { Input } from '@/Components/ui/input'
-import { Button } from '@/Components/ui/button'
+import { Button } from '@/Components/ui/Button'
 import { EyeOpenIcon, EyeClosedIcon } from '@radix-ui/react-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, initiateGoogleOAuth, initiateGitHubOAuth, processOAuthRedirect } from '../../Redux/Auth/Action'

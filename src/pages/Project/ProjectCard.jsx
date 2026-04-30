@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/Components/ui/dropdown-menu"
 
-import { Button } from '@/Components/ui/button'
+import { Button } from '@/Components/ui/Button'
 import { DotFilledIcon, DotsVerticalIcon } from '@radix-ui/react-icons'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'

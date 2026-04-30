@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/Avatar"
 import {Badge} from '@/Components/ui/badge'
-import { Button } from "@/Components/ui/button"
+import { Button } from "@/Components/ui/Button"
 import InviteUserForm from './InviteUserForm'
 import {ScrollArea} from '@/Components/ui/scroll-area'
 import IssueList from './IssueList'

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Button } from "@/Components/ui/button";
+import { Button } from "@/Components/ui/Button";
 import { Input } from "@/Components/ui/input";
 import { ArrowLeftIcon, CheckCircledIcon, EyeOpenIcon, EyeClosedIcon } from '@radix-ui/react-icons';
 import { resetPassword } from '../../Redux/Auth/Action';

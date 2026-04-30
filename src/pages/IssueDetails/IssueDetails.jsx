@@ -9,7 +9,7 @@ import { Badge } from "@/Components/ui/badge"
 import {
   Avatar,
   AvatarFallback
-} from '@/Components/ui/avatar' 
+} from '@/Components/ui/Avatar' 
 import {
   Select,
   SelectContent,
