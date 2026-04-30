@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { ScrollArea } from '@/Components/ui/Scroll-area'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/Components/ui/Tabs"
+import { ScrollArea } from '@/Components/ui/sroll-area'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/Components/ui/tabs"
 import CommentForm from './CommentForm'
 import CommentCard from './CommentCard'
 import { Badge } from "@/Components/ui/badge"
 import {
   Avatar,
   AvatarFallback
-} from '@/Components/ui/Avatar' 
+} from '@/Components/ui/avatar' 
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/Components/ui/Select"
+} from "@/Components/ui/select"
 
 import { useDispatch, useSelector } from 'react-redux'
 import { getIssueById, updateIssueStatus} from '../../Redux/Issue/Action'
