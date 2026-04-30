@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Card, CardContent } from '@/Components/ui/Ccrd'
+import { Card, CardContent } from '@/Components/ui/card'
 import { Button } from '@/Components/ui/button'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
 import { ScrollArea } from "@/Components/ui/sroll-area"
