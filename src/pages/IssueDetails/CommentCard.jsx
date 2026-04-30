@@ -56,11 +56,11 @@ const CommentCard = ({ comment, issueId }) => {
              comment.user?.username || 
              comment.author || 'Anonymous'}
           </p>
-          <p className='text-gray-400'>
+          <p className='text-black'>
             {comment.content || comment.text || 'No content'}
           </p>
           {comment.createdAt && (
-            <p className='text-xs text-gray-500'>
+            <p className='text-xs text-black'>
               {new Date(comment.createdAt).toLocaleDateString()}
             </p>
           )}

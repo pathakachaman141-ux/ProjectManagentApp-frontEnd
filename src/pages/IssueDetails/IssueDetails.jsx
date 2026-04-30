@@ -67,10 +67,10 @@ const IssueDetails = () => {
     // Loading state
     if (loading) {
         return (
-            <div className='px-20 py-8 text-gray-400 mt-6'>
+            <div className='px-20 py-8 mt-6'>
                 <div className='flex justify-center items-center h-64'>
                     <p>Loading issue details...</p>
-                    <div className="text-sm text-gray-500 mt-2">Issue ID: {issueId}</div>
+                    <div className="text-sm mt-2">Issue ID: {issueId}</div>
                 </div>
             </div>
         );
@@ -79,10 +79,10 @@ const IssueDetails = () => {
     // Error state
     if (error) {
         return (
-            <div className='px-20 py-8 text-gray-400 mt-6'>
+            <div className='px-20 py-8  mt-6'>
                 <div className='flex justify-center items-center h-64'>
                     <p className='text-red-400'>Error: {error}</p>
-                    <div className="text-sm text-gray-500 mt-2">Issue ID: {issueId}</div>
+                    <div className="text-sm mt-2">Issue ID: {issueId}</div>
                 </div>
             </div>
         );
@@ -91,10 +91,10 @@ const IssueDetails = () => {
     // No issue found
     if (!issueDetails) {
         return (
-            <div className='px-20 py-8 text-gray-400 mt-6'>
+            <div className='px-20 py-8 mt-6'>
                 <div className='flex justify-center items-center h-64'>
                     <p>No issue found</p>
-                    <div className="text-sm text-gray-500 mt-2">Issue ID: {issueId}</div>
+                    <div className="text-sm  mt-2">Issue ID: {issueId}</div>
                 </div>
             </div>
         );
@@ -109,24 +109,24 @@ const IssueDetails = () => {
    
 
     return (
-        <div className='px-4 sm:px-8 lg:px-20 py-8 text-gray-400 mt-6'>
-            <div className='flex flex-col lg:flex-row justify-between border p-4 sm:p-6 lg:p-10 rounded-lg gap-6'>
-                <ScrollArea className="flex-1 lg:mr-6">
+        <div className='px-4 sm:px-8 lg:px-20 py-8  mt-6'>
+            <div className='flex flex-col lg:flex-row  justify-between border p-4 sm:p-6 lg:p-10 rounded-lg gap-6'>
+                <ScrollArea className="bg-[#7BB3E8] rounded-lg text-black flex-1 lg:mr-6 ">
                     <div>
                         {/* Fixed: Display actual issue title */}
-                        <h1 className='text-lg font-semibold text-gray-400'>
+                        <h1 className='text-lg font-semibold '>
                             {issueData?.title || 'Untitled Issue'}
                         </h1>
-                        <div className='py-5'>
-                            <h2 className='font-semibold text-gray-400'>Description</h2>
-                            <p className='text-gray-400 text-sm mt-3'>
+                        <div className=' bg-[#7BB3E8]py-5'>
+                            <h2 className='font-semibol'>Description</h2>
+                            <p className='text-black text-sm mt-3'>
                                 {issueData?.description || 'No description available'}
                             </p>
                         </div>
                         <div className='mt-5'>
                             <h1 className='pb-3'>Activity</h1>
-                            <Tabs className="w-full max-w-[400px]" defaultValue="comments">
-                                <TabsList className="mb-5">
+                            <Tabs className="text-black w-full max-w-[400px]" defaultValue="comments">
+                                <TabsList className="mb-5 text-black">
                                     <TabsTrigger value="all">
                                         All
                                     </TabsTrigger>
@@ -145,9 +145,9 @@ const IssueDetails = () => {
                                 </TabsContent>
                                 <TabsContent value="comments">
                                     <CommentForm issueId={issueId}/>
-                                    <div className='mt-8 space-y-6'>
+                                    <div className='mt-8 space-y-6 text-black'>
                                         {commentsLoading ? (
-                                            <p className='text-gray-500'>Loading comments...</p>
+                                            <p className='text-black'>Loading comments...</p>
                                         ) : commentsError ? (
                                             <p className='text-red-400'>Error loading comments: {commentsError}</p>
                                         ) : Array.isArray(commentsData) && commentsData.length > 0 ? (
@@ -159,7 +159,7 @@ const IssueDetails = () => {
                                                 />
                                             ))
                                         ) : (
-                                            <div className='text-center text-gray-500 py-8'>
+                                            <div className='text-center text-black py-8'>
                                                 <p>No comments yet</p>
                                                 <p className='text-sm'>Be the first to comment on this issue!</p>
                                             </div>
@@ -177,7 +177,7 @@ const IssueDetails = () => {
                         onValueChange={handleUpdateIssueStatus}
                         value={issueData?.status || "pending"}
                     >
-                        <SelectTrigger className="w-full sm:w-[180px]">
+                        <SelectTrigger className="text-black bg-white w-full sm:w-[180px]">
                             <SelectValue placeholder="To Do" />
                         </SelectTrigger>
                         <SelectContent>
@@ -187,8 +187,8 @@ const IssueDetails = () => {
                         </SelectContent>
                     </Select>
                     
-                    <div className='border rounded-lg'>
-                        <p className='border py-3 px-5'>Details</p>
+                    <div className=' bg-[#7BB3E8] text-black border rounded-lg'>
+                        <p className='border py-3 px-5 font-bold'>Details</p>
                         <div className='p-5'>
                             <div className='space-y-7'>
                                 <div className='flex gap-10 items-center'>
@@ -240,7 +240,7 @@ const IssueDetails = () => {
                                 </div>
                                 
                                 {/* Debug info - remove in production */}
-                                <div className='flex gap-10 items-center text-xs text-gray-500'>
+                                <div className='flex gap-10 items-center text-xs text-black'>
                                     <p className='w-[7rem]'>Debug Info</p>
                                     <div>
                                         <p>Issue ID: {issueId}</p>

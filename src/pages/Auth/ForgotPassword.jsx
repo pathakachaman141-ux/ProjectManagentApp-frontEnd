@@ -109,7 +109,7 @@ const ForgotPassword = ({ onBack }) => {
     return (
         <div className="space-y-6">
             <div className="space-y-2 text-center">
-                <h2 className="text-2xl font-bold text-blue-500">Forgot Password?</h2>
+                <h2 className="text-2xl font-bold text-black">Forgot Password?</h2>
                
             </div>
 
@@ -121,7 +121,7 @@ const ForgotPassword = ({ onBack }) => {
                         placeholder="Enter your email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full"
+                        className="w-full text-black"
                         disabled={forgotPasswordLoading}
                     />
                 </div>

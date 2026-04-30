@@ -82,13 +82,13 @@ const Auth = () => {
         return (
             <div className="footer-container">
                 <div className="footer-links">
-                    <span className="footer-text">
+                    <span className="footer-text text-black">
                         {activeView === 'signup' ? "Already have an account?" : "Don't have an account?"}
                     </span>
                     <Button 
                         variant="ghost" 
                         onClick={() => handleViewChange(activeView === 'signup' ? 'login' : 'signup')}
-                        className="footer-link"
+                        className="footer-link text-black"
                     >
                         {activeView === 'signup' ? "Sign In" : "Sign Up"}
                     </Button>

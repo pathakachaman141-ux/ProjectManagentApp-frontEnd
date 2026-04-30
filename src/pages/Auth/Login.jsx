@@ -103,7 +103,10 @@ const Login = ({ onForgotPassword }) => {
 
     return (
         <div className='space-y-5'>
-            <h1 className="text-xl font-semibold text-center text-white">Login</h1>
+            <h1 className="text-2xl font-semibold text-center text-black tracking-wide">
+  Login
+</h1>
+
             
             {/* Social Login Buttons */}
             <div className="space-y-3">
@@ -142,7 +145,7 @@ const Login = ({ onForgotPassword }) => {
             {/* Divider */}
             <div className="relative">
                 <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-transparent px-2 text-gray-400">Or continue with email</span>
+                    <span className="bg-transparent px-2 text-gray-600">Or continue with email</span>
                 </div>
             </div>
             
@@ -235,7 +238,7 @@ const Login = ({ onForgotPassword }) => {
                     <Button 
                         variant="ghost" 
                         onClick={onForgotPassword}
-                        className="text-purple-400 hover:text-purple-300 p-0 h-auto font-normal text-sm"
+                        className="text-black hover:text-purple-300 p-0 h-auto font-normal text-sm"
                         disabled={isLoading || auth?.oauthLoading}
                         type="button"
                     >

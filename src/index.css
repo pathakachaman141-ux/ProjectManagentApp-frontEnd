@@ -48,12 +48,17 @@
     --ring: 220 10% 80%;
   }
 }
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background dark text-foreground;
+    @apply text-foreground;
+    background-image: url("/Assets/image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
-
 }

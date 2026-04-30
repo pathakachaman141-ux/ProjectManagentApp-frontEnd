@@ -56,7 +56,7 @@ const ProjectForm = () => { // Remove onClose prop since we'll use DialogClose
   const projectLimitReached = false
 
   return (
-    <div>
+    <div >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           {/* Project Name */}
@@ -78,7 +78,7 @@ const ProjectForm = () => { // Remove onClose prop since we'll use DialogClose
                     {...field}
                     placeholder="Enter project name"
                     type="text"
-                    className="border w-full border-gray-300 py-2 px-3"
+                    className="border w-full bg-white border-gray-300 py-2 px-3"
                   />
                 </FormControl>
                 <FormMessage />
@@ -108,7 +108,7 @@ const ProjectForm = () => { // Remove onClose prop since we'll use DialogClose
                   <Textarea
                     {...field}
                     placeholder="Enter project description (minimum 25 characters)..."
-                    className="border w-full border-gray-300 py-3 px-3"
+                    className="border w-full border-gray-300 py-3 px-3 bg-white"
                     rows={4}
                   />
                 </FormControl>
@@ -128,18 +128,19 @@ const ProjectForm = () => { // Remove onClose prop since we'll use DialogClose
             name="category"
             rules={{ required: "Please select a category" }}
             render={({ field }) => (
-              <FormItem>
+              <FormItem >
                 <FormLabel>Category</FormLabel>
                 <Select
                   onValueChange={field.onChange}
+                  
                   value={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger className="border border-gray-300">
+                    <SelectTrigger className="border border-gray-300 bg-white">
                       <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className='bg-white text-black'>
                     <SelectItem value="frontend">Frontend</SelectItem>
                     <SelectItem value="backend">Backend</SelectItem>
                     <SelectItem value="fullstack">Fullstack</SelectItem>
@@ -165,11 +166,11 @@ const ProjectForm = () => { // Remove onClose prop since we'll use DialogClose
                   value="" // Reset select after each selection
                 >
                   <FormControl>
-                    <SelectTrigger className="border border-gray-300">
+                    <SelectTrigger className="border bg-white border-gray-300">
                       <SelectValue placeholder="Select tags" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className='bg-white text-black'>
                     {tags.map((item) => (
                       <SelectItem key={item} value={item}>
                         {item}

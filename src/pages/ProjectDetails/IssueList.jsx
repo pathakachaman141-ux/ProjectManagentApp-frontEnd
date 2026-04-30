@@ -32,7 +32,7 @@ const IssueList = ({title, status}) => {
   return (
     <div>
       <Dialog>
-        <Card className="w-full md:w-[300px] lg:w-[310px]">
+        <Card className="w-full bg-[#7BB3E8] md:w-[300px] lg:w-[310px]">
             <CardHeader>
                 {title}
             </CardHeader>
@@ -45,7 +45,7 @@ const IssueList = ({title, status}) => {
 
             <CardFooter>
                 <DialogTrigger>
-                    <Button variant="outline" className="w-fulll flex items-center gap-2">
+                    <Button variant="outline" className="w-fulll bg-[#C49A7F] flex items-center gap-2">
                         <PlusIcon/>
                         Create Issue</Button>
                 </DialogTrigger>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Card, CardContent } from '@/Components/ui/card'
-import { Button } from '@/Components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
-import { ScrollArea } from "@/Components/ui/scroll-area"
-import { Label } from "@/Components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/Components/ui/radio-group"
-import { Input } from "@/Components/ui/input"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Input } from "@/components/ui/input"
 import { Search } from 'lucide-react'
 import ProjectCard from '../Project/ProjectCard'
 import { useSelector, useDispatch } from 'react-redux'
@@ -15,22 +15,20 @@ export const tags = [
     "all", "react", "nextjs", "springboot", "mysql", "mongodb", "angular", "python", "flask", "django"
 ]
 
-// Map display names to backend values
 const tagMapping = {
     "all": "all",
-    "react": "react", 
+    "react": "react",
     "nextjs": "nextjs",
-    "spring boot": "springboot", // This maps "spring boot" display to "springboot" backend value
+    "spring boot": "springboot",
     "springboot": "springboot",
     "mysql": "mysql",
-    "mongodb": "mongodb", 
+    "mongodb": "mongodb",
     "angular": "angular",
     "python": "python",
     "flask": "flask",
     "django": "django"
 };
 
-// Helper function to get backend value for tag
 const getTagBackendValue = (displayTag) => {
     return tagMapping[displayTag.toLowerCase()] || displayTag.toLowerCase().replace(/\s+/g, '');
 };
@@ -41,9 +39,7 @@ const ProjectList = () => {
     const { project } = useSelector(store => store);
     const dispatch = useDispatch();
 
-    // Fetch projects on component mount and when filters change
     useEffect(() => {
-        // Only fetch with filters if no search is active
         if (!keyword.trim()) {
             if (filters.category !== 'all' || filters.tag !== 'all') {
                 const filterParams = {};
@@ -53,11 +49,9 @@ const ProjectList = () => {
             } else {
                 dispatch(fetchProjects());
             }
-        } else {
         }
     }, [dispatch, filters, keyword]);
 
-    // Handle search with debouncing
     useEffect(() => {
         if (keyword.trim()) {
             const delayDebounce = setTimeout(() => {
@@ -65,7 +59,6 @@ const ProjectList = () => {
             }, 500);
             return () => clearTimeout(delayDebounce);
         } else {
-            // If search is cleared, fetch regular projects with current filters
             if (filters.category !== 'all' || filters.tag !== 'all') {
                 const filterParams = {};
                 if (filters.category !== 'all') filterParams.category = filters.category;
@@ -78,28 +71,24 @@ const ProjectList = () => {
     }, [keyword, dispatch, filters]);
 
     const handleFilterChange = (type, value) => {
-        // Clear search when filters change
         if (keyword.trim()) {
             setKeyword("");
         }
-        
-        // For tags, ensure we're using the correct backend value
+
         const processedValue = type === 'tag' ? getTagBackendValue(value) : value;
-        
+
         setFilters(prev => ({
             ...prev,
             [type]: processedValue
         }));
     }
-    
+
     const handleSearchChange = (e) => {
         setKeyword(e.target.value);
     }
 
-    // Get the appropriate projects to display
     const getProjectsToDisplay = () => {
         if (keyword.trim()) {
-            // Handle both array and object with data property for search results
             if (Array.isArray(project.searchProject)) {
                 return project.searchProject;
             } else if (project.searchProject?.data) {
@@ -107,8 +96,7 @@ const ProjectList = () => {
             }
             return [];
         }
-        
-        // For regular projects, handle the nested data structure
+
         if (Array.isArray(project.project)) {
             return project.project;
         } else if (project.project?.data) {
@@ -116,67 +104,107 @@ const ProjectList = () => {
         }
         return [];
     };
-    
+
     return (
-        <div className='relative px-5 lg:px-0 lg:flex gap-5 justify-center py-5'>
+        <div
+            className="relative px-5 lg:px-0 lg:flex gap-5 justify-center py-5"
+            style={{
+                backgroundImage: "url('/Assets/image.jpg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                minHeight: '100vh'
+            }}
+        >
+            {/* Filter Section - Styled per Figma */}
             <section className='filterSection'>
-                <Card className='p-5 sticky top-10'>
-                    <div className='flex justify-between lg:w-[20rem]'>
-                        <p className='text-xl -tracking-wider'>filters</p>
-                        <Button variant="ghost" size="icon">
-                            <MixerHorizontalIcon/>
+                <Card className='p-6 sticky top-10 bg-[#7BB3E8] border-none shadow-lg rounded-3xl'>
+                    <div className='flex justify-between lg:w-[20rem] mb-6'>
+                        <h2 className='text-2xl font-semibold text-gray-900'>Filters</h2>
+                        <Button variant="ghost" size="icon" className="hover:bg-white/20">
+                            <MixerHorizontalIcon className="h-5 w-5" />
                         </Button>
                     </div>
-                    <CardContent className='mt-5'>
+                    <CardContent className='p-0'>
                         <ScrollArea className="h-[70vh]">
-                            <div className="space-y-10">
+                            <div className="space-y-8">
+                                {/* Category Filter */}
                                 <div>
-                                    <h1 className='pb-4 text-gray-400 border-b'>Category</h1>
-                                    <div className='pt-6'>
-                                        <RadioGroup 
-                                            className="space-y-4" 
+                                    <h3 className='pb-3 text-sm font-medium text-gray-700 uppercase tracking-wide'>Category</h3>
+                                    <div className='pt-2'>
+                                        <RadioGroup
+                                            className="space-y-3 bg-[#D4E4F3] rounded-2xl p-4"
                                             value={filters.category}
                                             onValueChange={(value) => handleFilterChange("category", value)}
-                                            disabled={keyword.trim() !== ""} // Disable filters during search
+                                            disabled={keyword.trim() !== ""}
                                         >
                                             <div className="flex items-center space-x-3">
-                                                <RadioGroupItem value='all' id='cat-all'/>
-                                                <Label htmlFor="cat-all">all</Label>
+                                                <RadioGroupItem 
+                                                    value='all' 
+                                                    id='cat-all'
+                                                    className="border-2 border-gray-600 text-blue-600"
+                                                />
+                                                <Label htmlFor="cat-all" className="text-base font-medium text-gray-900 cursor-pointer">
+                                                    All
+                                                </Label>
                                             </div>
                                             <div className="flex items-center space-x-3">
-                                                <RadioGroupItem value='frontend' id='cat-frontend'/>
-                                                <Label htmlFor="cat-frontend">front end</Label>
+                                                <RadioGroupItem 
+                                                    value='frontend' 
+                                                    id='cat-frontend'
+                                                    className="border-2 border-gray-600 text-blue-600"
+                                                />
+                                                <Label htmlFor="cat-frontend" className="text-base font-medium text-gray-900 cursor-pointer">
+                                                    Frontend
+                                                </Label>
                                             </div>
                                             <div className="flex items-center space-x-3">
-                                                <RadioGroupItem value='fullstack' id='cat-fullstack'/>
-                                                <Label htmlFor="cat-fullstack">full stack</Label>
+                                                <RadioGroupItem 
+                                                    value='fullstack' 
+                                                    id='cat-fullstack'
+                                                    className="border-2 border-gray-600 text-blue-600"
+                                                />
+                                                <Label htmlFor="cat-fullstack" className="text-base font-medium text-gray-900 cursor-pointer">
+                                                    Full Stack
+                                                </Label>
                                             </div>
                                             <div className="flex items-center space-x-3">
-                                                <RadioGroupItem value='backend' id='cat-backend'/>
-                                                <Label htmlFor="cat-backend">backend</Label>
+                                                <RadioGroupItem 
+                                                    value='backend' 
+                                                    id='cat-backend'
+                                                    className="border-2 border-gray-600 text-blue-600"
+                                                />
+                                                <Label htmlFor="cat-backend" className="text-base font-medium text-gray-900 cursor-pointer">
+                                                    Backend
+                                                </Label>
                                             </div>
                                         </RadioGroup>
                                     </div>
                                 </div>
 
+                                {/* Tags Filter */}
                                 <div>
-                                    <h1 className='pb-4 text-gray-400 border-b'>Tags</h1>
-                                    <div className='pt-6'>
-                                        <RadioGroup 
-                                            className="space-y-4" 
+                                    <h3 className='pb-3 text-sm font-medium text-gray-700 uppercase tracking-wide'>Tags</h3>
+                                    <div className='pt-2'>
+                                        <RadioGroup
+                                            className="space-y-3 bg-[#D4E4F3] rounded-2xl p-4"
                                             value={filters.tag}
                                             onValueChange={(value) => handleFilterChange("tag", value)}
-                                            disabled={keyword.trim() !== ""} // Disable filters during search
+                                            disabled={keyword.trim() !== ""}
                                         >
                                             {tags.map((tag, index) => {
                                                 const backendValue = getTagBackendValue(tag);
                                                 return (
                                                     <div key={index} className="flex items-center space-x-3">
-                                                        <RadioGroupItem 
-                                                            value={tag} // Use display value for RadioGroup
+                                                        <RadioGroupItem
+                                                            value={tag}
                                                             id={`tag-${backendValue}`}
+                                                            className="border-2 border-gray-600 text-blue-600"
                                                         />
-                                                        <Label htmlFor={`tag-${backendValue}`}>
+                                                        <Label 
+                                                            htmlFor={`tag-${backendValue}`}
+                                                            className="text-base font-medium text-gray-900 cursor-pointer capitalize"
+                                                        >
                                                             {tag}
                                                         </Label>
                                                     </div>
@@ -190,6 +218,8 @@ const ProjectList = () => {
                     </CardContent>
                 </Card>
             </section>
+
+            {/* Project List Section */}
             <section className='projectListSection w-full lg:w-[48rem]'>
                 <div className='flex gap-2 items-center pb-5 justify-between'>
                     <div className='relative p-0 w-full'>
@@ -197,27 +227,27 @@ const ProjectList = () => {
                             value={keyword}
                             onChange={handleSearchChange}
                             placeholder="Search Project"
-                            className="w-full pl-10 pr-4 py-2"
+                            className="w-full pl-12 pr-4 py-6 text-base rounded-xl bg-white/90 backdrop-blur-sm border-none shadow-md focus:shadow-lg transition-shadow text-black"
                         />
-                        <Search className="absolute top-3 left-3 h-4 w-4 text-gray-400"/>
+                        <Search className="absolute top-1/2 -translate-y-1/2 left-4 h-5 w-5 text-gray-400" />
                     </div>
                 </div>
                 <div className='space-y-5 min-h-[74vh]'>
                     {project.loading ? (
                         <div className="flex justify-center items-center min-h-[200px]">
-                            <div>Loading projects...</div>
+                            <div className="text-gray-700 text-lg">Loading projects...</div>
                         </div>
                     ) : project.error ? (
-                        <div className="text-red-500 text-center min-h-[200px] flex items-center justify-center">
+                        <div className="text-red-600 text-center min-h-[200px] flex items-center justify-center bg-white/80 rounded-xl p-8">
                             Error: {project.error}
                         </div>
                     ) : getProjectsToDisplay().length === 0 ? (
-                        <div className="text-gray-500 text-center min-h-[200px] flex items-center justify-center">
+                        <div className="text-gray-600 text-center min-h-[200px] flex items-center justify-center bg-white/80 rounded-xl p-8">
                             {keyword.trim() ? "No projects found matching your search." : "No projects available."}
                         </div>
                     ) : (
                         getProjectsToDisplay().map((item) => (
-                            <ProjectCard key={item.id} item={item}/>
+                            <ProjectCard key={item.id} item={item} />
                         ))
                     )}
                 </div>

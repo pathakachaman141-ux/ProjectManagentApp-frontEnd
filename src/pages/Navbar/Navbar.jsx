@@ -34,19 +34,27 @@ const Navbar = () => {
     dispatch(logout())
   }
   return (
-    <div className='sticky top-0 z-50 bg-black border-b py-4 px-5 flex items-center justify-between'>
-      <div className='flex items-center gap-3'>
-        <p onClick={()=>navigate("/")} className='cursor-pointer'>Project Management</p>
+    <div className='sticky top-0 z-50 bg-white border-b py-4 px-5 flex items-center justify-between'>
+      <div
+  className="flex items-center text-black gap-3 bg-cover bg-center px-4 py-2 rounded"
+  style={{ backgroundImage: "url('/Assests/team.jpg')" }}
+>
+  <p
+    onClick={() => navigate("/")}
+    className="cursor-pointer text-black"
+  >
+    Project Management
+  </p>
 
         <Dialog>
           <DialogTrigger asChild>
-            <Button variant="ghost">New Project</Button>
+            <Button className='text-black' variant="ghost">New Project</Button>
           </DialogTrigger>
 
-          <DialogContent>
+          <DialogContent className='bg-[#7BB3E8] text-black'>
             <DialogHeader>
               <DialogTitle>Create New Project</DialogTitle>
-              <DialogDescription>Fill out the form below to create a new project.</DialogDescription>
+              <DialogDescription className='text-black'>Fill out the form below to create a new project.</DialogDescription>
             </DialogHeader>
 
             <ProjectForm />
@@ -58,11 +66,11 @@ const Navbar = () => {
       </div>
       
       <div className='flex gap-3 items-center'>
-        <p className='text-sm font-medium'>{auth.user?.username}</p>
+        <p className='text-sm font-medium text-black'>{auth.user?.username}</p>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="sm">
-              <PersonIcon className="h-4 w-4" />
+              <PersonIcon className="h-4 w-4 text-black " />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

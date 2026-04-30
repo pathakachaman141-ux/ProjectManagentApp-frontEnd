@@ -148,7 +148,7 @@ const UpdateProject = () => {
 
   if (error) {
     return (
-      <div className="flex flex-col justify-center items-center min-h-screen space-y-4">
+      <div className="flex flex-col justify-center items-center min-h-screen space-y-4 ">
         <div className="text-red-500 text-center">
           <h2 className="text-xl font-semibold mb-2">Error Loading Project</h2>
           <p>{error}</p>
@@ -162,16 +162,17 @@ const UpdateProject = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6 max-w-4xl">
+    <div className="container mx-auto px-4 py-6 max-w-4xl ">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center space-x-4">
+      <div className="flex items-center justify-between mb-6 ">
+        <div className="flex items-center space-x-4 ">
           <Button 
             onClick={() => navigate(`/`)} 
             variant="ghost" 
             size="sm"
+            className='bg-white'
           >
-            <ArrowLeft className="h-4 w-4 mr-2" />
+            <ArrowLeft className="h-4 w-4 mr-2 bg-white" />
             Back to Project
           </Button>
           <h1 className="text-2xl font-bold">Update Project</h1>
@@ -179,12 +180,12 @@ const UpdateProject = () => {
       </div>
 
       {/* Form */}
-      <Card>
+      <Card className='bg-[#7BB3E8]'>
         <CardHeader>
           <CardTitle>Project Details</CardTitle>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 ">
             {/* Project Name */}
             <div className="space-y-2">
               <Label htmlFor="name">Project Name *</Label>
@@ -195,6 +196,7 @@ const UpdateProject = () => {
                 onChange={handleInputChange}
                 placeholder="Enter project name"
                 required
+                className='bg-white'
               />
             </div>
 
@@ -208,6 +210,7 @@ const UpdateProject = () => {
                 onChange={handleInputChange}
                 placeholder="Enter project description"
                 rows={4}
+                className='bg-white'
               />
             </div>
 
@@ -215,8 +218,8 @@ const UpdateProject = () => {
             <div className="space-y-2">
               <Label>Category *</Label>
               <Select value={formData.category} onValueChange={handleCategoryChange}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a category" />
+                <SelectTrigger className='bg-white'>
+                  <SelectValue className='bg-white' placeholder="Select a category" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="frontend">Frontend</SelectItem>
@@ -257,7 +260,7 @@ const UpdateProject = () => {
                   onChange={(e) => setNewTag(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Add custom tag"
-                  className="flex-1"
+                  className="flex-1 bg-white"
                 />
                 <Button 
                   type="button" 
@@ -279,7 +282,7 @@ const UpdateProject = () => {
                       <Badge 
                         key={index}
                         variant="outline" 
-                        className="cursor-pointer hover:bg-gray-100"
+                        className="cursor-pointer bg-[#C49A7F] hover:bg-gray-100"
                         onClick={() => addTag(tag)}
                       >
                         {tag}

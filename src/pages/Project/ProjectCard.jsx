@@ -38,19 +38,19 @@ const ProjectCard = ({ item }) => { // ✅ Added item prop
 
 
   return (
-    <Card className='p-5 w-full lg:max-w-3xl'>
-      <div className='space-y-5'>
+    <Card className='p-5 w-full lg:max-w-3xl bg-[#7BB3E8]'>
+      <div className='space-y-5 text-black' >
         <div className='space-y-2'>
           <div className='flex justify-between'>
-            <div className='flex items-center gap-5'>
+            <div className='flex items-center gap-5 '>
               <h1 
                 onClick={() => navigate(`/project/${item.id}`)} 
-                className='cursor-pointer font-bold text-lg hover:text-blue-600 transition-colors'
+                className='cursor-pointer font-bold text-lg hover:text-blue-600 transition-colors text-black'
               >
-                {item.name || 'Untitled Project'} {/* ✅ Use actual project name */}
+                {item.name|| 'Untitled Project'} {/* ✅ Use actual project name */}
               </h1>
               <DotFilledIcon />
-              <p className='text-sm text-gray-400'>
+              <p className='text-sm text-black'>
                 {item.category || 'uncategorized'} {/* ✅ Use actual category */}
               </p>
             </div>
@@ -77,7 +77,7 @@ const ProjectCard = ({ item }) => { // ✅ Added item prop
               </DropdownMenu>
             </div>
           </div>
-          <p className='text-gray-500 text-sm'>
+          <p className='text-black text-sm'>
             {item.description || 'No description provided.'} {/* ✅ Use actual description */}
           </p>
         </div>
@@ -85,7 +85,7 @@ const ProjectCard = ({ item }) => { // ✅ Added item prop
           {/* ✅ Use actual tags instead of hardcoded ones */}
           {item.tags && item.tags.length > 0 ? (
             item.tags.map((tag, index) => (
-              <Badge key={index} variant="outline">
+              <Badge className = "bg-[#D49266CC] text-black"key={index} variant="outline">
                 {tag}
               </Badge>
             ))

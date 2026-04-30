@@ -113,12 +113,12 @@ const ProjectDetails = () => {
     return (
         <div className='mt-5 lg:px-10'>
             {/* Main container with border */}
-            <div className="border border-gray-200 rounded-lg">
-                <div className='lg:flex gap-5 justify-between p-6'>
-                    <ScrollArea className="h-screen lg:w-[69%] pr-2">
+            <div className="border border-gray-200 rounded-lg ">
+                <div className='lg:flex gap-5 justify-between p-6 '>
+                    <ScrollArea className="h-screen lg:w-[69%] pr-2 ">
                         {/* Project Details Section with border */}
-                        <div className='border border-gray-200 rounded-md p-6 mb-6'>
-                            <div className='text-gray-400 pb-10 w-full'>
+                        <div className='border border-gray-200 rounded-xl p-6 mb-6 bg-[#7BB3E8]'>
+                            <div className='text-black pb-10 w-full  '>
                                 <h1 className='text-lg font-semibold pb-5'>{projectData.name || 'Untitled Project'}</h1>
                                 <div className='space-y-5 pb-10 text-sm'>
                                     <p className='w-full md:max-w-lg lg:max-w-xl'>
@@ -148,7 +148,7 @@ const ProjectDetails = () => {
                                         </div>    
                                         <Dialog>
                                             <DialogTrigger asChild>
-                                                <Button className='ml-2 mt-1' size="sm" variant="outline" onClick={handleProjectInvitation}>
+                                                <Button className=' ml-2 mt-1 bg-[#C49A7F]' size="sm" variant="outline" onClick={handleProjectInvitation}>
                                                     <span>
                                                         Invite
                                                     </span>
@@ -168,8 +168,8 @@ const ProjectDetails = () => {
                                         <p>{projectData.category || 'Uncategorized'}</p>
                                     </div>
                                     <div className='flex'>
-                                        <p className='w-36'>Status :</p>
-                                        <Badge>{projectData.status || 'In Progress'}</Badge>
+                                        <p className='w-36 '>Status :</p>
+                                        <Badge className='bg-[#C49A7F]'>{projectData.status || 'In Progress'}</Badge>
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@ const ProjectDetails = () => {
 
                         {/* Tasks Section */}
                         <section>
-                            <p className='py-5 border-b text-lg -tracking-wider'>Tasks</p>
+                            <p className='py-5 border-b text-lg bg-[#7BB3E8] font-bold rounded-full -tracking-wider'>Tasks</p>
                             <div className='lg:flex md:flex gap-5 justify-between py-5'>
                                 {/* FIXED: Add unique keys to IssueList components */}
                                 <IssueList key="todo-list" status="pending" title="Todo List"/>

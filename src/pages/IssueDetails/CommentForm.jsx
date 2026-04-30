@@ -120,7 +120,7 @@ const CommentForm = ({ issueId }) => {
                       {...field}
                       placeholder="Write a comment..."
                       type="text"
-                      className="w-full"
+                      className="w-full bg-white"
                       disabled={createLoading}
                     />
                   </FormControl>

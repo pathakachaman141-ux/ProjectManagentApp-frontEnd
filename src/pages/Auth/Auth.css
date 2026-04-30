@@ -262,25 +262,31 @@
     min-height: 100vh;
     width: 100vw;
     position: relative;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b4e 100%);
+    background: linear-gradient(135deg, white);
     overflow: hidden;
+    background-image: url("/Assets/image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .auth-background {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
 }
+
 
 .particle {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: rgba(147, 51, 234, 0.3);
+    background: white;
     border-radius: 50%;
     animation: pulse 3s infinite;
+    
 }
 
 @keyframes pulse {
@@ -297,16 +303,21 @@
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
+    
 }
 
 .auth-container {
-    background: rgba(255, 255, 255, 0.05);
+    
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+    background-image: url("/Assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .auth-box {

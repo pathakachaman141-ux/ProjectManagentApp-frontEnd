@@ -186,18 +186,18 @@ const ChatBox = ({ projectId }) => {
   }
 
   return (
-    <div className='sticky mt-20'>
+    <div className='sticky mt-20 bg-[#D9D9D9] rounded-xl'>
       <div className='border rounded-lg'>
         <h1 className='border-b p-5 font-semibold'>
           Chat Box - Project {currentProjectId}
         </h1>
         <ScrollArea ref={scrollAreaRef} className="h-[32rem] w-full p-5 flex gap-3 flex-col">
           {isLoading && messages.length === 0 ? (
-            <div className="text-center text-gray-500 p-4">
+            <div className="text-center text-black p-4">
               Loading messages...
             </div>
           ) : messages.length === 0 ? (
-            <div className="text-center text-gray-500 p-4">
+            <div className="text-center text-black p-4">
               No messages yet. Start a conversation!
             </div>
           ) : (
@@ -221,7 +221,7 @@ const ChatBox = ({ projectId }) => {
                     )}
                   </div>
                   <Avatar>
-                    <AvatarFallback className=" text-white">
+                    <AvatarFallback className="bg-black text-white">
                       {(item.senderName || item.sender?.username || auth.user?.fullName || 'U')[0].toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
@@ -230,7 +230,7 @@ const ChatBox = ({ projectId }) => {
                 // Other user's message (left side)
                 <div className='flex gap-2 mb-2 justify-start' key={item.id || index}>
                   <Avatar>
-                    <AvatarFallback className="bg-gray-500 text-white">
+                    <AvatarFallback className="bg-black text-white">
                       {(item.senderName || item.sender?.username|| 'U')[0].toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
@@ -253,7 +253,7 @@ const ChatBox = ({ projectId }) => {
         <div className='relative p-5 border-t'>
           <Input
             placeholder="Type message..."
-            className="pr-12"
+            className="pr-12 bg-[#7BB3E8] rounded-full"
             value={message} 
             onChange={handleMessageChange}
             onKeyPress={handleKeyPress}
@@ -261,7 +261,7 @@ const ChatBox = ({ projectId }) => {
           />
           <Button 
             onClick={handleSendMessage} 
-            className="absolute right-7 top-1/2 transform -translate-y-1/2 rounded-full" 
+            className="absolute right-7  bg-white top-1/2 transform -translate-y-1/2 rounded-full" 
             size="icon" 
             variant="ghost"
             disabled={isSendingMessage || !message.trim()}
