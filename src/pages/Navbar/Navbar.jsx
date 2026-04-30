@@ -30,9 +30,11 @@ const Navbar = () => {
   const  navigate=useNavigate();
   const dispatch = useDispatch()
 
-  const handleLogout = ()=>{
-    dispatch(logout())
-  }
+
+const handleLogout = () => {
+  dispatch(logout());
+  navigate("/");
+};
   return (
     <div className='sticky top-0 z-50 bg-white border-b py-4 px-5 flex items-center justify-between'>
       <div

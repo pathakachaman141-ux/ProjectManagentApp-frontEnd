@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const token = params.get("token");
+
+    if (token) {
+      localStorage.setItem("jwt", token);
+      dispatch({ type: "LOGIN_SUCCESS", payload: token });
+      navigate("/home", { replace: true });
+    }
+  }, []);
 
   const handleLogin = () => {
     navigate('/login')
-
   };
 
   const handleSignUp = () => {
-    console.log('Navigate to signup');
     navigate('/signup')
   };
 
@@ -38,13 +50,13 @@ export default function LandingPage() {
             <a href="#pricing" className="hover:text-gray-600 transition text-sm xl:text-base">Pricing</a>
             <a href="#more" className="hover:text-gray-600 transition text-sm xl:text-base">More</a>
             <a href="#support" className="hover:text-gray-600 transition text-sm xl:text-base">Support</a>
-            <button 
+            <button
               onClick={handleLogin}
               className="bg-orange-500 hover:bg-orange-600 text-white px-4 xl:px-6 py-2 rounded-md transition text-sm xl:text-base"
             >
               Log In
             </button>
-            <button 
+            <button
               onClick={handleSignUp}
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 xl:px-6 py-2 rounded-md transition text-sm xl:text-base"
             >
@@ -54,19 +66,19 @@ export default function LandingPage() {
 
           {/* Mobile Navigation */}
           <div className="flex lg:hidden items-center gap-2 sm:gap-3">
-            <button 
+            <button
               onClick={handleLogin}
               className="bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md transition text-xs sm:text-sm"
             >
               Log In
             </button>
-            <button 
+            <button
               onClick={handleSignUp}
               className="bg-blue-500 hover:bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md transition text-xs sm:text-sm"
             >
               Sign Up
             </button>
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="ml-2 p-2 hover:bg-gray-100 rounded-md"
             >
@@ -101,7 +113,7 @@ export default function LandingPage() {
             <p className="text-gray-600 text-sm sm:text-base lg:text-base mb-6 sm:mb-7 lg:mb-8 max-w-md mx-auto lg:mx-0">
               Work together seamlessly in real-time from anywhere. Boost team's productivity and success.
             </p>
-            
+
             {/* User Avatars */}
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-6 sm:mb-7 lg:mb-8">
               <div className="flex -space-x-2">
@@ -111,7 +123,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <button 
+            <button
               onClick={handleGetStarted}
               className="bg-blue-500 hover:bg-blue-600 text-white px-6 sm:px-7 lg:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-medium transition shadow-lg hover:shadow-xl"
             >
@@ -126,8 +138,8 @@ export default function LandingPage() {
               <div className="border-2 sm:border-3 lg:border-4 border-blue-400 rounded-lg p-2 sm:p-3 lg:p-4 bg-white inline-block">
                 {/* Orange oval border */}
                 <div className="w-44 h-52 sm:w-52 sm:h-60 md:w-60 md:h-72 lg:w-64 lg:h-80 xl:w-72 xl:h-80 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center shadow-2xl">
-                  {/* Globe image - oval shaped */}
-                  <div 
+                  {/* Globe image */}
+                  <div
                     className="w-36 h-44 sm:w-44 sm:h-52 md:w-52 md:h-64 lg:w-56 lg:h-72 xl:w-60 xl:h-72 rounded-full bg-gray-800 overflow-hidden bg-cover bg-center"
                     style={{ backgroundImage: "url('/Assets/landingPage.jpg')" }}
                   >
@@ -148,11 +160,11 @@ export default function LandingPage() {
                 <span className="text-orange-400 text-base sm:text-lg lg:text-xl">★</span>
                 <span className="text-orange-400 text-base sm:text-lg lg:text-xl">★</span>
               </div>
-              
+
               <div className="flex items-start gap-3">
-                <div 
+                <div
                   className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-full bg-orange-400 flex-shrink-0 bg-cover bg-center"
-                  style={{ backgroundImage: "url('/Assests/harsh-patel.jpg')" }}
+                  style={{ backgroundImage: "url('/Assets/harsh-patel.jpg')" }}
                 ></div>
                 <div className="flex-1">
                   <h3 className="font-bold text-sm sm:text-base mb-1.5 sm:mb-2 text-gray-900">Harsh Patel</h3>
@@ -175,7 +187,7 @@ export default function LandingPage() {
           <p className="text-center text-gray-600 mb-8 sm:mb-10 lg:mb-12 text-sm sm:text-base">
             Everything you need to collaborate effectively
           </p>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             <div className="bg-white p-5 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition">
               <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-blue-500 rounded-lg mb-3 sm:mb-4"></div>

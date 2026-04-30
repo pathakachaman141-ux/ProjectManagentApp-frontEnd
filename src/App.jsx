@@ -41,7 +41,7 @@ const App = () => {
         <Route path='/' element={<LandingPage />} />
         <Route path='/login' element={<Auth />} />
         <Route path='/signup' element={<Auth />} />
-        <Route path='/accept_invitation' element={<AcceptInvitation />} />
+        
         
         {/* Authenticated routes */}
         {auth.user ? (
@@ -52,6 +52,7 @@ const App = () => {
             <Route path='/upgrade_plan' element={<AuthenticatedLayout><Subscription /></AuthenticatedLayout>} />
             <Route path='/project/:projectId/edit' element={<AuthenticatedLayout><UpdateProject /></AuthenticatedLayout>} />
             <Route path='/upgrade_plan/success' element={<AuthenticatedLayout><UpgradeSuccessPage /></AuthenticatedLayout>} />
+            <Route path='/accept_invitation' element={<AcceptInvitation />} />
           </>
         ) : null}
       </Routes>
