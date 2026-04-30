@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Card, CardContent, CardHeader, CardTitle } from '@/Components/ui/Card'
-import { Button } from '@/Components/ui/Button'
-import { Input } from '@/Components/ui/Input'
-import { Textarea } from '@/Components/ui/Textarea'
-import { Label } from '@/Components/ui/Label'
+import { Card, CardContent, CardHeader, CardTitle } from '@/Components/ui/card'
+import { Button } from '@/Components/ui/button'
+import { Input } from '@/Components/ui/input'
+import { Textarea } from '@/Components/ui/textarea'
+import { Label } from '@/Components/ui/label'
 import { Badge } from '@/Components/ui/badge'
 import {
   Select,
@@ -13,7 +13,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/Components/ui/Select"
+} from "@/Components/ui/select"
 import { X, Plus, ArrowLeft, Save, Loader2 } from 'lucide-react'
 import { fetchProjectById, updateProject } from '../../Redux/Project/Action'
 import { toast } from 'react-hot-toast'

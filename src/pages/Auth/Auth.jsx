@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Button } from "@/Components/ui/Button"
+import { Button } from "@/Components/ui/button"
 import "./Auth.css"
 import Login from './Login'
 import Signup from './Signup'

@@ -7,11 +7,11 @@ import {
   FormControl,
   FormLabel,
   FormMessage
-} from '@/Components/ui/Form'
-import { Input } from '@/Components/ui/Input'
+} from '@/Components/ui/form'
+import { Input } from '@/Components/ui/input'
 import { useParams } from 'react-router-dom'
-import { Button } from '@/Components/ui/Button'
-import { DialogClose } from '@/Components/ui/Dialog'
+import { Button } from '@/Components/ui/button'
+import { DialogClose } from '@/Components/ui/dialog'
 import { useDispatch } from 'react-redux'
 import { inviteToProject } from '../../Redux/Project/Action'
 
