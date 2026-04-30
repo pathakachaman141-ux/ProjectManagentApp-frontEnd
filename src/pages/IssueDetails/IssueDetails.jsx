@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { ScrollArea } from '@/Components/ui/sroll-area'
+import { ScrollArea } from '@/Components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/Components/ui/tabs"
 import CommentForm from './CommentForm'
 import CommentCard from './CommentCard'
