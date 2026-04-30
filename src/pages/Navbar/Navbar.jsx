@@ -1,4 +1,4 @@
-import { Button } from '../../components/ui/button'
+import { Button } from '../../Components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,7 +6,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../components/ui/dropdown-menu"
+} from "../../Components/ui/dropdown-menu"
 
 import {
   Dialog,
@@ -15,7 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../components/ui/dialog"
+} from "../../Components/ui/dialog"
 import { useDispatch, useSelector } from 'react-redux';
 
 import ProjectForm from '../Project/ProjectForm'
