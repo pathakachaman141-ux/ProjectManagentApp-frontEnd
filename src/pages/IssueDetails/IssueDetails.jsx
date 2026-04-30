@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { ScrollArea } from '@/Components/ui/scroll-area'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/Components/ui/tabs"
+import { ScrollArea } from '@/Components/ui/Scroll-area'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/Components/ui/Tabs"
 import CommentForm from './CommentForm'
 import CommentCard from './CommentCard'
 import { Badge } from "@/Components/ui/badge"
@@ -16,7 +16,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/Components/ui/select"
+} from "@/Components/ui/Select"
 
 import { useDispatch, useSelector } from 'react-redux'
 import { getIssueById, updateIssueStatus} from '../../Redux/Issue/Action'

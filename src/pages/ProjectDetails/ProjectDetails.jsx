@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/Avatar"
 import {Badge} from '@/Components/ui/badge'
 import { Button } from "@/Components/ui/Button"
 import InviteUserForm from './InviteUserForm'
-import {ScrollArea} from '@/Components/ui/scroll-area'
+import {ScrollArea} from '@/Components/ui/Scroll-area'
 import IssueList from './IssueList'
 import ChatBox from './ChatBox'
 import {
@@ -15,7 +15,7 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose
-} from "@/Components/ui/dialog"
+} from "@/Components/ui/Dialog"
 import { PlusIcon } from 'lucide-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProjectById } from '../../Redux/Project/Action'

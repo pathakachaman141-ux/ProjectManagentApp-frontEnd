@@ -4,7 +4,7 @@ import {
   CardHeader,
   CardTitle,
   CardContent
-} from '@/Components/ui/card'
+} from '@/Components/ui/Card'
 import { Button } from '@/Components/ui/Button'
 import UserList from './UserList'
 
@@ -15,7 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator
-} from '@/Components/ui/dropdown-menu'
+} from '@/Components/ui/Dropdown-menu'
 import {
   DotsVerticalIcon,
   PersonIcon

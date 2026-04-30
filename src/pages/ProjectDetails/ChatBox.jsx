@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { ScrollArea } from '@/Components/ui/scroll-area'
+import { ScrollArea } from '@/Components/ui/Scroll-area'
 import { Button } from '@/Components/ui/Button'
-import { Input } from '@/Components/ui/input'
+import { Input } from '@/Components/ui/Input'
 import {
   Avatar,
   AvatarFallback

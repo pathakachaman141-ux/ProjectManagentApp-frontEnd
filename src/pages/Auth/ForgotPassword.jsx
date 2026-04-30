@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button } from "@/Components/ui/Button"
-import { Input } from "@/Components/ui/input"
+import { Input } from "@/Components/ui/Input"
 import { ArrowLeftIcon, CheckCircledIcon } from '@radix-ui/react-icons'
 import { forgotPassword } from '../../Redux/Auth/Action' // Adjust path as needed
 

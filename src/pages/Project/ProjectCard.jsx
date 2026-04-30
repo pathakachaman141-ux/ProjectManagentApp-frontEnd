@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Card } from '@/Components/ui/card'
+import { Card } from '@/Components/ui/Card'
 import { Badge } from "@/Components/ui/badge"
 import {
   DropdownMenu,
@@ -8,7 +8,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/Components/ui/dropdown-menu"
+} from "@/Components/ui/Dropdown-menu"
 
 import { Button } from '@/Components/ui/Button'
 import { DotFilledIcon, DotsVerticalIcon } from '@radix-ui/react-icons'

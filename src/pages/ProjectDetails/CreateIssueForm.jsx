@@ -7,10 +7,10 @@ import {
   FormControl,
   FormLabel,
   FormMessage
-} from '@/Components/ui/form'
-import { Input } from '@/Components/ui/input'
+} from '@/Components/ui/Form'
+import { Input } from '@/Components/ui/Input'
 import { Button } from '@/Components/ui/Button'
-import { DialogClose } from '@/Components/ui/dialog'
+import { DialogClose } from '@/Components/ui/Dialog'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { createIssue } from '../../Redux/Issue/Action' // Add proper import path

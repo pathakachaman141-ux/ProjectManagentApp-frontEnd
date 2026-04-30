@@ -7,8 +7,8 @@ import {
   FormItem,
   FormControl,
   FormMessage
-} from '@/Components/ui/form'
-import { Input } from '@/Components/ui/input'
+} from '@/Components/ui/Form'
+import { Input } from '@/Components/ui/Input'
 import { Button } from '@/Components/ui/Button'
 import { EyeOpenIcon, EyeClosedIcon } from '@radix-ui/react-icons'
 import { useDispatch, useSelector } from 'react-redux'

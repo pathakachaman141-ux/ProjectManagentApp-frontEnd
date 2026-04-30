@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from '@/Components/ui/card'
+import { Card } from '@/Components/ui/Card'
 import { CheckCircledIcon } from '@radix-ui/react-icons'
 import { Button } from '@/Components/ui/Button'
 import { useNavigate } from 'react-router-dom'

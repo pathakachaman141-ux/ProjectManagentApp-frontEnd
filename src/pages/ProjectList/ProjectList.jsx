@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent } from '@/Components/ui/Card'
 import { Button } from '@/Components/ui/Button'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from "@/Components/ui/Scroll-area"
 import { Label } from "@/Components/ui/Label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Input } from "@/components/ui/input"
+import { RadioGroup, RadioGroupItem } from "@/Components/ui/Radio-group"
+import { Input } from "@/Components/ui/Input"
 import { Search } from 'lucide-react'
 import ProjectCard from '../Project/ProjectCard'
 import { useSelector, useDispatch } from 'react-redux'

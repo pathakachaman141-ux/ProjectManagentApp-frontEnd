@@ -10,10 +10,10 @@ import {
   FormItem,
   FormControl,
   FormMessage
-} from '@/Components/ui/form'
+} from '@/Components/ui/Form'
 import { createComment } from '../../Redux/Comment/Action'
 import { fetchCommentsByIssueId } from '../../Redux/Comment/Action'
-import { Input } from '@/Components/ui/input'
+import { Input } from '@/Components/ui/Input'
 import { Button } from '@/Components/ui/Button'
 import { useDispatch, useSelector } from 'react-redux'
 
